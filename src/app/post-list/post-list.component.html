@@ -1,0 +1,13 @@
+<h2> Les Posts ! </h2>
+
+<!-- Connexion à post-list-item.component-->
+<!--<app-post-list-item></app-post-list-item> -->
+
+<!--<app-post-list-item *ngFor="let post of posts"></app-post-list-item>-->
+
+
+<ul class="list-group">
+<!--La propriété doit être une propriété Input , annotée avec le décorateur, car l' externe se liera comme ceci.@Input()-->
+  <app-post-list-item *ngFor="let post of posts" [post]="post"></app-post-list-item>
+
+</ul>

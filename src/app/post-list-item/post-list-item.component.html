@@ -1,0 +1,30 @@
+<div>
+
+<!-- Appelle de l'objet qui se trouve dans post-list-item.component.ts -->
+
+ <!-- <li class="list-group-item">-->
+
+ <!--<li [ngClass]="{getBackground()}">-->
+
+  <li [ngClass]="{'list-group-item':true, 
+  'list-group-item-success': this.i>this.j, 
+  'list-group-item-danger' : this.i<this.j}">
+
+    <h2 class="titrepost" [ngStyle]="{color: getColor()}">{{post.title}}</h2>
+
+    <p class="date">{{post.created_at | date: 'short' }}</p>
+
+      <div class="float">
+
+      <p [ngStyle]="{color: getColor()}">{{post.content}}</p>
+
+      <!-- <button class="btn btn-success" --> 
+      <button class="btn btn-success" (click)="onLoveIt()">Love It </button>
+      <!-- <button class="btn btn-danger" --> 
+      <button class="btn btn-danger" (click)="onDontLoveIt()">Don't love It ! </button>
+      </div>
+
+  </li>
+</div>
+
+
